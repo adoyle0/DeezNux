@@ -1,0 +1,15 @@
+#!/bin/sh
+
+[ -x "$(command -v g610-led)" ] && g610-led -a ff &
+if [ -f ".screenlayout/default.sh" ]; then
+	. ".screenlayout/default.sh" &
+fi
+
+xmodmap -e 'clear lock' &
+xmodmap -e 'keysym Caps_Lock = Escape' &
+picom -b &
+xset r rate 300 50 &
+unclutter &
+redshift -l 43:-70 &
+xclip &
+/user/lib/polkit-gnome/polkit-gnome-authentication-agent-1 -d &
