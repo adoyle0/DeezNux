@@ -42,22 +42,10 @@ do
 end
 
 awful.layout.layouts = {
-    awful.layout.suit.spiral.dwindle,
+    awful.layout.suit.tile.right,
     awful.layout.suit.tile.top,
-    --awful.layout.suit.floating,
-    --awful.layout.suit.tile,
-    --awful.layout.suit.tile.left,
-    --awful.layout.suit.tile.bottom,
-    --awful.layout.suit.fair,
-    --awful.layout.suit.fair.horizontal,
-    --awful.layout.suit.spiral,
-    --awful.layout.suit.max,
-    --awful.layout.suit.max.fullscreen,
-    --awful.layout.suit.magnifier,
-    --awful.layout.suit.corner.nw,
-    -- awful.layout.suit.corner.ne,
-    -- awful.layout.suit.corner.sw,
-    -- awful.layout.suit.corner.se,
+    awful.layout.suit.tile.left,
+    awful.layout.suit.tile.bottom,
 }
 
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -72,6 +60,7 @@ local cw = calendar_widget({
 	previous_month_button = 4,
 	next_month_button = 5,
 })
+
 mytextclock:connect_signal("button::press",
     function(_, _, _, button)
         if button == 1 then cw.toggle() end
@@ -201,13 +190,6 @@ root.buttons(gears.table.join(
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "F1",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
-              {description = "view previous", group = "tag"}),
-    awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
-              {description = "view next", group = "tag"}),
-    awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
-              {description = "go back", group = "tag"}),
-
     awful.key({ modkey,           }, "j",
         function ()
             awful.client.focus.byidx( 1)
@@ -220,20 +202,12 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
---    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
---              {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
-              {description = "swap with next client by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
-              {description = "swap with previous client by index", group = "client"}),
-    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
+    awful.key({ modkey, 	  }, "l", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
+    awful.key({ modkey, 	  }, "h", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
-              {description = "jump to urgent client", group = "client"}),
     awful.key({ modkey,           }, "Tab",
         function ()
             awful.client.focus.history.previous()
@@ -247,9 +221,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "w", function () awful.spawn(browser) end,
               {description = "open firefox", group = "launcher"}),
     awful.key({ modkey, "Shift"   }, "w", function () awful.spawn(browser2) end,
-              {description = "open brave", group = "launcher"}),
-    awful.key({ modkey,           }, "e", function () awful.spawn("code") end,
-              {description = "open code", group = "launcher"}),
+              {description = "open brave",   group = "launcher"}),
+    awful.key({ modkey,           }, "e", function () awful.spawn(editor_cmd) end,
+              {description = "open editor",    group = "launcher"}),
     awful.key({ modkey, "Shift"   }, "e", function () awful.spawn("thunderbird") end,
               {description = "open thunderbird", group = "launcher"}),
     awful.key({ modkey,           }, "m", function () awful.spawn(music) end,
@@ -261,9 +235,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "c", function () awful.spawn("telegram-desktop") end,
               {description = "open telegram-desktop", group = "launcher"}),
     awful.key({ modkey,           }, "g", function () awful.spawn("godot") end,
-              {description = "open lutris", group = "launcher"}),
+              {description = "open godot",   group = "launcher"}),
     awful.key({ modkey, "Shift"   }, "g", function () awful.spawn("steam-native") end,
-              {description = "open steam", group = "launcher"}),
+              {description = "open steam",   group = "launcher"}),
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, 	  }, "BackSpace", awesome.restart,
@@ -271,18 +245,11 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "Escape", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
-              {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
-              {description = "decrease master width factor", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
-              {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
-              {description = "decrease the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
-              {description = "increase the number of columns", group = "layout"}),
-    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
-              {description = "decrease the number of columns", group = "layout"}),
+    awful.key({ modkey, "Shift"   }, "k",     function () awful.tag.incmwfact( 0.05)          end,
+              {description = "resize vsplit up", group = "layout"}),
+    awful.key({ modkey, "Shift"   }, "j",     function () awful.tag.incmwfact(-0.05)          end,
+              {description = "resize vsplit down", group = "layout"}),
+
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
