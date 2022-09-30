@@ -18,3 +18,4 @@ alias \
 	bb="byobu" \
 	push="rsync -avzP --copy-links " \
 	wget="wget --hsts-file='XDG_CACHE_HOME/wget-hsts'" \
+	sup="push ~/projects/http deez:" \
