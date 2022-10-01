@@ -244,6 +244,8 @@ globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "Escape", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
+    awful.key({ modkey,           }, "v", function () awful.spawn("virt-manager") end,
+              {description = "open virt-manager",   group = "launcher"}),
 
     awful.key({ modkey, "Shift"   }, "k",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "resize vsplit up", group = "layout"}),
