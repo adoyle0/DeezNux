@@ -1,0 +1,2 @@
+cp $(awk {print} ~/.cache/wal/wal) ~/projects/http/bg.png
+cp ~/.cache/wal/colors.css ~projects/http/colors.css

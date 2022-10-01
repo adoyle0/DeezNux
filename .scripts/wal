@@ -1,0 +1,10 @@
+#! /bin/zsh
+
+wal -i ~/Pictures/Wallpapers
+
+cp $(awk {print} ~/.cache/wal/wal) ~/.cache/wal/bg
+pywalfox update
+pywal-discord
+wal-telegram
+
+echo 'awesome.restart()' | awesome-client
