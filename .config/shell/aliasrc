@@ -3,19 +3,29 @@
 # Use neovim for vim if present.
 [ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
 
+# Shortcuts
 alias \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -vI" \
-	mkd="mkdir -pv" \
-	x="exit" \
-	ls="ls -hN --color=auto --group-directories-first" \
-	grep="grep --color=auto" \
-	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi" \
-	ka="killall" \
-	hosts="sudo nvim /etc/hosts" \
-	bb="byobu" \
-	push="rsync -avzP --copy-links " \
-	wget="wget --hsts-file='XDG_CACHE_HOME/wget-hsts'" \
-	sup="push ~/projects/http deez:" \
+cf="~/.config && v" \
+cfv="~/.config/nvim && v" \
+cfa="~/.config/awesome && v" \
+cfs="~/.config/shell && v" \
+cfl="~/.config/lf && v" \
+
+# General
+alias \
+cp="cp -iv" \
+mv="mv -iv" \
+rm="rm -vI" \
+mkd="mkdir -pv" \
+x="exit" \
+ls="ls -hN --color=auto --group-directories-first" \
+grep="grep --color=auto" \
+diff="diff --color=auto" \
+ccat="highlight --out-format=ansi" \
+ka="killall" \
+hosts="sudo nvim /etc/hosts" \
+bb="byobu" \
+push="rsync -avzP --copy-links " \
+wget="wget --hsts-file='XDG_CACHE_HOME/wget-hsts'" \
+sup="push ~/projects/http deez:" \
+v="vim ." \
