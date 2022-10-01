@@ -17,6 +17,9 @@ cfv="~/.config/nvim && v" \
 cfa="~/.config/awesome && v" \
 cfs="~/.config/shell && v" \
 cfl="~/.config/lf && v" \
+cfx="~/.config/x11 && v" \
+cfz="~/.config/zsh && v" \
+cfk="~/.config/kitty && v" \
 
 # Add verbosity
 alias \
