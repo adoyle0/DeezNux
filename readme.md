@@ -1,6 +1,6 @@
 Here's a list of dependencies/packages referenced in the files, some stuff is probably missing
 
-`awesome
+```awesome
 kitty
 neovim
 firefox-developer-edition
@@ -30,4 +30,4 @@ polkit-gnome
 aur:
 lf-git
 stpv-git or ctpf-git
-nvim-packer-git`
+nvim-packer-git```
