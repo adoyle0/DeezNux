@@ -3,6 +3,13 @@
 # Use neovim for vim if present.
 [ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
 
+# /comfy/
+alias \
+v="vim ." \
+x="exit" \
+ka="killall" \
+bb="byobu" \
+
 # Shortcuts
 alias \
 cf="~/.config && v" \
@@ -11,21 +18,25 @@ cfa="~/.config/awesome && v" \
 cfs="~/.config/shell && v" \
 cfl="~/.config/lf && v" \
 
-# General
+# Add verbosity
 alias \
 cp="cp -iv" \
 mv="mv -iv" \
 rm="rm -vI" \
 mkd="mkdir -pv" \
-x="exit" \
+
+# Add color
+alias \
 ls="ls -hN --color=auto --group-directories-first" \
 grep="grep --color=auto" \
 diff="diff --color=auto" \
 ccat="highlight --out-format=ansi" \
-ka="killall" \
+
+# Laziness
+alias \
 hosts="sudo nvim /etc/hosts" \
-bb="byobu" \
 push="rsync -avzP --copy-links " \
-wget="wget --hsts-file='XDG_CACHE_HOME/wget-hsts'" \
 sup="push ~/projects/http deez:" \
-v="vim ." \
+
+# Forget why
+wget="wget --hsts-file='XDG_CACHE_HOME/wget-hsts'" \
