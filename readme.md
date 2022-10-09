@@ -26,6 +26,7 @@ unclutter
 redshift
 xclip
 polkit-gnome
+lua-language-server
 
 aur:
 lf-git
