@@ -1,3 +1,4 @@
+source ~/.config/shell/aliasrc
 # Colors
 (cat ~/.cache/wal/sequences &)
 source ~/.cache/wal/colors-tty.sh
