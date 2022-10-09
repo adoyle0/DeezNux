@@ -27,6 +27,8 @@ redshift
 xclip
 polkit-gnome
 lua-language-server
+arc-icon-theme
+acpi
 
 aur:
 lf-git

@@ -19,6 +19,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
@@ -167,8 +168,9 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-	    cpu_widget(),
-	    ram_widget(),
+	        cpu_widget(),
+	        ram_widget(),
+            battery_widget(),
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
