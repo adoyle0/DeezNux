@@ -7,6 +7,7 @@ require('src.layouts')
 -- seemingly important stuff
 require("awful.autofocus")
 require("awful.hotkeys_popup.keys")
+Beautiful.init(".config/awesome/theme.lua")
 
 Menubar.utils.terminal = Terminal -- Set the terminal for applications that require it
 
@@ -80,7 +81,6 @@ Awful.screen.connect_for_each_screen(function(s)
     -- We need one layoutbox per screen.
     s.mylayoutbox = Awful.widget.layoutbox(s)
     s.mylayoutbox:buttons(Gears.table.join(
-                           Awful.button({ }, 1, function () Awful.layout.inc( 1) end),
                            Awful.button({ }, 3, function () Awful.layout.inc(-1) end),
                            Awful.button({ }, 4, function () Awful.layout.inc( 1) end),
                            Awful.button({ }, 5, function () Awful.layout.inc(-1) end)))
