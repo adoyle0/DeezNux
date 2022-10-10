@@ -8,7 +8,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "monospace 12"
+theme.font          = "monospace 11"
 theme.wallpaper = '.cache/wal/bg'
 
 theme.useless_gap   = dpi(5)
