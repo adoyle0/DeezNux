@@ -1,0 +1,8 @@
+Gears = require("gears")
+Awful = require("awful")
+Wibox = require("wibox")
+Beautiful = require("beautiful")
+Beautiful.init(".config/awesome/theme.lua")
+Naughty = require("naughty")
+Menubar = require("menubar")
+Hotkeys_popup = require("awful.hotkeys_popup")

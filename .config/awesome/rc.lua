@@ -1,79 +1,16 @@
--- User Globals
-Terminal = "kitty"
-Editor = "nvim"
-Editor_cmd = Terminal .. " -e " .. Editor
-Browser = "firefox-developer-edition"
-Browser2 = "brave-nightly"
-Music = "spotify"
-Modkey = "Mod4"
+-- Include
+require('src.error_handler')
+require('src.core_globals')
+require('src.user_globals')
+require('src.layouts')
 
--- Core Globals
-Gears = require("gears")
-Awful = require("awful")
-Wibox = require("wibox")
-Beautiful = require("beautiful")
-Naughty = require("naughty")
-Menubar = require("menubar")
-Hotkeys_popup = require("awful.hotkeys_popup")
-
--- Widgets
-local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
-local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
-local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
-local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
-
-
--- Layouts
-Awful.layout.layouts = {
-    Awful.layout.suit.tile.right,
-    Awful.layout.suit.tile.top,
-    Awful.layout.suit.tile.left,
-    Awful.layout.suit.tile.bottom,
-}
-
--- dunno yet
+-- seemingly important stuff
 require("awful.autofocus")
 require("awful.hotkeys_popup.keys")
-Beautiful.init(".config/awesome/theme.lua")
-
-if awesome.startup_errors then
-    Naughty.notify({ preset = naughty.config.presets.critical,
-                     title = "Oops, there were errors during startup!",
-                     text = awesome.startup_errors })
-end
-
--- Handle runtime errors after startup
-do
-    local in_error = false
-    awesome.connect_signal("debug::error", function (err)
-        -- Make sure we don't go into an endless error loop
-        if in_error then return end
-        in_error = true
-
-        Naughty.notify({ preset = naughty.config.presets.critical,
-                         title = "Oops, an error happened!",
-                         text = tostring(err) })
-        in_error = false
-    end)
-end
 
 Menubar.utils.terminal = Terminal -- Set the terminal for applications that require it
 
-mykeyboardlayout = Awful.widget.keyboardlayout()
-
-mytextclock = Wibox.widget.textclock()
-
-local cw = calendar_widget({
-	placement = 'top_right',
-	start_sunday = 'true',
-	previous_month_button = 4,
-	next_month_button = 5,
-})
-
-mytextclock:connect_signal("button::press",
-    function(_, _, _, button)
-        if button == 1 then cw.toggle() end
-    end)
+require('src.widgets')
 
 -- Create a Wibox for each screen and add it
 local taglist_buttons = Gears.table.join(
@@ -176,12 +113,12 @@ Awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = Wibox.layout.fixed.horizontal,
-	        cpu_widget(),
-	        ram_widget(),
-            battery_widget(),
-            mykeyboardlayout,
+	        Cpu_widget(),
+	        Ram_widget(),
+            Battery_widget(),
+            Mykeyboardlayout,
             Wibox.widget.systray(),
-            mytextclock,
+            Mytextclock,
             s.mylayoutbox,
         },
     }
