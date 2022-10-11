@@ -66,7 +66,7 @@ Awful.screen.connect_for_each_screen(function(s)
             layout = Wibox.layout.fixed.horizontal,
 	        Cpu_widget(),
 	        Ram_widget(),
-            Battery_widget(),
+            Batteryarc_widget({enable_battery_warning = false}),
             Wibox.widget.systray(),
             Mytextclock,
             s.mylayoutbox,
