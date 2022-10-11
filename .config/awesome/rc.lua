@@ -1,16 +1,4 @@
-require('src.error_handler')
-require("awful.autofocus")
-require("awful.hotkeys_popup.keys")
-
---
-
-Gears         = require("gears")
-Awful         = require("awful")
-Wibox         = require("wibox")
-Beautiful     = require("beautiful")
-Naughty       = require("naughty")
-Menubar       = require("menubar")
-Hotkeys_popup = require("awful.hotkeys_popup")
+require('core')
 
 Terminal      = "kitty"
 Editor        = "nvim"
@@ -29,12 +17,12 @@ Awful.layout.layouts = {
     Awful.layout.suit.tile.bottom,
 }
 
---
 
 Menubar.utils.terminal = Terminal -- Set the terminal for applications that require it
+
 require('src.screen_setup')
 
-require('src.binds')
+require('binds')
 
 require('src.rules')
 

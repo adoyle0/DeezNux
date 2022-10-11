@@ -1,4 +1,3 @@
--- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
 Awful.rules.rules = {
     -- All clients will match this rule.
@@ -54,4 +53,3 @@ Awful.rules.rules = {
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
 }
--- }}}

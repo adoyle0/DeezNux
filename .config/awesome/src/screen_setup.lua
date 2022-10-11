@@ -18,6 +18,7 @@ Mytextclock:connect_signal("button::press",
     function(_, _, _, button)
         if button == 1 then cw.toggle() end
     end)
+
 -- Create a Wibox for each screen and add it
 local taglist_buttons = Gears.table.join(
                     Awful.button({ }, 1, function(t) t:view_only() end),
@@ -97,9 +98,9 @@ Awful.screen.connect_for_each_screen(function(s)
 
     -- Create a tasklist widget
     s.mytasklist = Awful.widget.tasklist {
-        screen  = s,
-        filter  = Awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
+        screen   = s,
+        filter   = Awful.widget.tasklist.filter.currenttags,
+        buttons  = tasklist_buttons
     }
 
     -- Create the Wibox
@@ -114,7 +115,9 @@ Awful.screen.connect_for_each_screen(function(s)
             s.mytaglist,
             s.mypromptbox,
         },
+
         s.mytasklist, -- Middle widget
+
         { -- Right widgets
             layout = Wibox.layout.fixed.horizontal,
 	        Cpu_widget(),

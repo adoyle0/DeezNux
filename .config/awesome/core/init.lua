@@ -1,0 +1,11 @@
+require('core.error_handler')
+require("awful.autofocus")
+require("awful.hotkeys_popup.keys")
+
+Gears         = require("gears")
+Awful         = require("awful")
+Wibox         = require("wibox")
+Beautiful     = require("beautiful")
+Naughty       = require("naughty")
+Menubar       = require("menubar")
+Hotkeys_popup = require("awful.hotkeys_popup")
