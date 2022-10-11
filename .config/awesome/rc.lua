@@ -17,15 +17,11 @@ Awful.layout.layouts = {
     Awful.layout.suit.tile.bottom,
 }
 
-
 Menubar.utils.terminal = Terminal -- Set the terminal for applications that require it
 
-require('src.screen_setup')
-
+require('wibar')
 require('binds')
-
-require('src.rules')
-
-require('src.signals')
+require('rules')
+require('signals')
 
 Gears.timer.start_new(10, function() collectgarbage("step", 20000) return true end)
