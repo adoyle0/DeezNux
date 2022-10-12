@@ -9,7 +9,7 @@ If you know what you're doing you could copy my environment to your own system, 
 you end up overwriting something you'll miss later.
 
 With your new user in the home directory you can do something like:
-1. ```git glone ...
-2. ```cp dots/* .
-3. ```rmdir dots
-4. ```cd .scripts && ./installdeps.sh
+1. ```git glone ...```
+2. ```cp dots/* .```
+3. ```rmdir dots```
+4. ```cd .scripts && ./installdeps.sh```
