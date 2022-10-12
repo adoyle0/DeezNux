@@ -2,7 +2,7 @@
 clientkeys = Gears.table.join(
     Awful.key({ Modkey,           }, "f",         function (c) c.fullscreen = not c.fullscreen c:raise()         end,
               {description = "toggle fullscreen",       group = "client"}),
-    Awful.key({ Modkey, 	      }, "q",         function (c) c:kill()                                          end,
+    Awful.key({ Modkey,           }, "q",         function (c) c:kill()                                          end,
               {description = "close",                   group = "client"}),
     Awful.key({ Modkey,           }, "o",         function (c) c:move_to_screen()                                end,
               {description = "move to screen",          group = "client"}),
