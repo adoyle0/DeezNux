@@ -10,7 +10,10 @@ local cw = Calendar_widget({
 	next_month_button = 5,
 })
 
-Mytextclock = Wibox.widget.textclock()
+Mytextclock = Wibox.widget{
+    format = ' %a %b %d, %I:%M%P ',
+    widget = Wibox.widget.textclock
+}
 Mytextclock:connect_signal("button::press",
     function(_, _, _, button)
         if button == 1 then cw.toggle() end
