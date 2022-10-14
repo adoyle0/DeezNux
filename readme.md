@@ -1,4 +1,4 @@
-#You're gonna love my nux (really)
+# You're gonna love my nux (really)
 This repo has two functions:
 
 1. A place to keep my configs where I can easily keep them synced and deploy them
