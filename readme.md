@@ -13,6 +13,6 @@ As your new user in your new user's home directory you can do something like:
 1. ```git clone...```
 2. ```cp dots/* .```
 3. ```rmdir dots```
-4. ```cd .scripts && ./installdeps.sh```
+4. ```cd .scripts && ./installdeps```
 
 Some packages are probably missing from the script so expect some minor issues
