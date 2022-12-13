@@ -11,7 +11,7 @@ local theme = {}
 theme.font          = "monospace 11"
 theme.wallpaper     = '.cache/wal/bg'
 
-theme.useless_gap   = dpi(5)
+theme.useless_gap   = dpi(0)
 theme.border_width  = dpi(1)
 
 theme.menu_height   = dpi(15)
