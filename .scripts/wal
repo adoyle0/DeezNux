@@ -5,6 +5,6 @@ wal -i ~/Pictures/Wallpapers
 cp $(awk {print} ~/.cache/wal/wal) ~/.cache/wal/bg
 pywalfox update
 pywal-discord
-wal-telegram
+wal-telegram -g
 
 echo 'awesome.restart()' | awesome-client
