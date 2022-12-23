@@ -73,4 +73,4 @@ Awful.screen.connect_for_each_screen(function(s)
     }
 end)
 
-Awful.util.spawn('nitrogen --restore')
+os.execute('nitrogen --set-zoom-fill $(awk {print} ~/.cache/wal/wal)')
