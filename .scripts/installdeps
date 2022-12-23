@@ -24,6 +24,7 @@ xclip \
 polkit-gnome \
 arc-icon-theme \
 acpi \
+nitrogen \
 \
 `# Aur`\
 python-pywalfox \
