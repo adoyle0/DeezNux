@@ -13,5 +13,6 @@ As your new user in your new user's home directory you can do something like:
 2. ``cp DeezNux/* .``
 3. ``rmdir DeezNux``
 4. ``.scripts/installdeps``
+5. ``startx``
 
 Some packages are probably missing from the install script, also it assumes you use [yay](https://github.com/Jguer/yay)
