@@ -1,0 +1,6 @@
+# vim: filetype=sh
+cf="~/.config && v" \
+cfv="~/.config/nvim && v" \
+cfa="~/.config/awesome && v" \
+cfs="~/.config/shell && v" \
+cfl="~/.config/lf && v" \
