@@ -21,6 +21,7 @@ cfl="~/.config/lf && v" \
 cfx="~/.config/x11 && v" \
 cfz="~/.config/zsh && v" \
 cfk="~/.config/kitty && v" \
+cfp="nvim ~/.config/picom.conf" \
 
 # Add verbosity
 alias \

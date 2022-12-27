@@ -17,7 +17,7 @@ globalkeys = Gears.table.join(
               {description = "open thunderbird",        group = "launcher"}),
     Awful.key({ Modkey,           }, "m",         function () Awful.spawn(Music)                                 end,
               {description = "open spotify",            group = "launcher"}),
-    Awful.key({ Modkey,           }, "d",         function () Awful.spawn("discord")                             end,
+    Awful.key({ Modkey,           }, "d",         function () Awful.spawn("discord --enable-gpu-rasterization")  end,
               {description = "open discord",            group = "launcher"}),
     Awful.key({ Modkey,           }, "c",         function () Awful.spawn("caprine")                             end,
               {description = "open caprine",            group = "launcher"}),
